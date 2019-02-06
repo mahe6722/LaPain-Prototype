@@ -13,11 +13,13 @@ public class DestroyByContact : MonoBehaviour {
         
         if (other.tag == "Player") {
             print("Enemy Damaged the Player");
+            Destroy(gameObject);
             
         }
         
-
+        else if(other.tag != "Enemy") {
         Destroy(gameObject);
+        }
     }
 
 }

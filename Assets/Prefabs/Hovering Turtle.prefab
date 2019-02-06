@@ -215,7 +215,6 @@ MonoBehaviour:
   gunBarrelEnd: {fileID: 4564646225132766}
   timeBetweenShots: 1
   safeToFire: 1
-  boxCastSize: {x: 0, y: 0}
 --- !u!212 &212454187066399630
 SpriteRenderer:
   m_ObjectHideFlags: 1

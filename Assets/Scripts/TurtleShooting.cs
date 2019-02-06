@@ -11,7 +11,7 @@ public class TurtleShooting : MonoBehaviour {
 
     public float timeBetweenShots;
     public float safeToFire;
-    public Vector2 boxCastSize;
+    
 
     bool friendlyFire = false;
 
