@@ -11,6 +11,7 @@ public class TurtleShooting : MonoBehaviour {
 
     public float timeBetweenShots;
     public float safeToFire;
+    public Vector2 boxCastSize;
 
     bool friendlyFire = false;
 
@@ -41,9 +42,10 @@ public class TurtleShooting : MonoBehaviour {
     void CheckFriendlyFire()
     {
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left);
+        RaycastHit2D hit = Physics2D.BoxCast(transform.position, new Vector2(.2f, .2f), 0f, Vector2.left);
 
-        if (hit != false) {
+
+        if (hit == true) {
             if (hit.collider.gameObject.tag == "Enemy") 
             {
             timerFireRate = 0;
@@ -51,13 +53,13 @@ public class TurtleShooting : MonoBehaviour {
             //Debug Friendly Fire
             print("Friendly Fire!!");
             } 
+            else {
+                friendlyFire = false;
+                //Debug Friendly Fire
+                print("Fire At Will!");
+            }
         }
-        else 
-        {                
-        friendlyFire = false;
-        //Debug Friendly Fire
-        print("Fire At Will!");                
-        }
+     
     }
 
     void Shoot()

@@ -15,6 +15,7 @@ public class DestroyByContact : MonoBehaviour {
             print("Enemy Damaged the Player");
             
         }
+        
 
         Destroy(gameObject);
     }
