@@ -10,7 +10,9 @@ public class Gun : MonoBehaviour
     public Transform shotPoint;
 
     private float timeBtwShots;
-    public float startTimeBtwShots;
+    public static float startTimeBtwShots = 0.7f;
+
+
 
     private void Update()
     {
@@ -20,12 +22,16 @@ public class Gun : MonoBehaviour
         rotZ = Mathf.Clamp(rotZ, -60, 60);
         transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
 
-        if (timeBtwShots <= 0) {
-            if (Input.GetMouseButton(0)) {
+        if (timeBtwShots <= 0)
+        {
+            if (Input.GetMouseButton(0))
+            {
                 Instantiate(projectile, shotPoint.position, transform.rotation);
                 timeBtwShots = startTimeBtwShots;
             }
-        } else {
+        }
+        else
+        {
             timeBtwShots -= Time.deltaTime;
         }
     }
