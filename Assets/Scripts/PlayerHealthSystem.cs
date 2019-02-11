@@ -8,10 +8,14 @@ public class PlayerHealthSystem : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "laserBeam")
+        while (playerHealth > 1)
         {
-            playerHealth--;
-            Gun.startTimeBtwShots = Gun.startTimeBtwShots - 0.2f;
+            if (other.tag == "laserBeam")
+            {
+                playerHealth--;
+                Gun.startTimeBtwShots = Gun.startTimeBtwShots - 0.2f;
+                break;
+            }
         }
     }
 }
