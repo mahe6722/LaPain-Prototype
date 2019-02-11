@@ -8,10 +8,12 @@ public class Projectile : MonoBehaviour
     public float lifeTime;
     public float distance;
     public LayerMask whatIsSolid;
+    SnekoMovement snekoMovement;
 
     private void Start()
     {
         Invoke("DestroyProjectile", lifeTime);
+        snekoMovement = GameObject.Find("Sneko").GetComponent<SnekoMovement>();
     }
 
     private void Update()
@@ -20,6 +22,9 @@ public class Projectile : MonoBehaviour
         if (hitInfo.collider != null) {
             if (hitInfo.collider.CompareTag("Enemy")) {
                 Debug.Log("Enemy must take damage!");
+
+                //Reduce currentBorder in SnekoMovement Script by 1. Not using "--" because this value might need to be changed to a smaller value for each shot.
+                snekoMovement.currentBorder = snekoMovement.currentBorder - 1;
                 
             }
            DestroyProjectile();

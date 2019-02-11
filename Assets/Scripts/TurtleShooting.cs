@@ -11,22 +11,25 @@ public class TurtleShooting : MonoBehaviour {
 
     public float timeBetweenShots;
     public float safeToFire;
-    
 
+    public GameObject player;
+    
     bool friendlyFire = false;
 
 	// Use this for initialization
-	void Awake () {     
-        
+	void Awake () {
+        player = GameObject.Find("Player");
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
         timerFireRate += Time.deltaTime;              
                 
         if (timerFireRate >= timeBetweenShots && Time.timeScale != 0 && !friendlyFire) {
 
-            if (timerFireRate >= safeToFire) {
+            //Check if allowed to Fire based on FirRate and FriendlyFire, Further make sure that if the Player is Dead, Stop Shooting!
+            if (timerFireRate >= safeToFire && player != null) {
             Shoot();
             }
         }       
@@ -66,7 +69,7 @@ public class TurtleShooting : MonoBehaviour {
     {
         timerFireRate = 0;
 
-       // Spawn Noob Tube shells           
+       // Spawn Projectiles from the Gun on the Turtle.           
         Instantiate(laserBeam, gunBarrelEnd.position, gunBarrelEnd.rotation);
 
     }
