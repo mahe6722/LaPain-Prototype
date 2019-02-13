@@ -69,6 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4070872f5f928f469c9f2051424fcc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turtleDamage: 0
 --- !u!114 &114772070267041242
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -86,6 +87,7 @@ MonoBehaviour:
   whatIsSolid:
     serializedVersion: 2
     m_Bits: 256
+  playerDamage: 30
 --- !u!212 &212904689748938072
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -30,9 +30,12 @@ public class PlaceHolder_Health : MonoBehaviour {
         //Switching Between Enrage Sprites based on current health.
         if (currentHealth <= 75 && currentHealth > 25) {
             enrageImage.sprite = enrageState2;
+            Gun.startTimeBtwShots = 0.4f;
+            
         }
         if (currentHealth <= 25) {
             enrageImage.sprite = enrageState3;
+            Gun.startTimeBtwShots = 0.2f;
         }
         
 	}

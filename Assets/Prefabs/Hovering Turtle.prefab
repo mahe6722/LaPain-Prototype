@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212454187066399630}
   - component: {fileID: 114271283998923142}
   - component: {fileID: 60615595315090228}
+  - component: {fileID: 114852966004124564}
   m_Layer: 8
   m_Name: Hovering Turtle
   m_TagString: Enemy
@@ -200,6 +201,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turtleSpeed: 3
   frequency: 1
+  SpawnLane1: {fileID: 0}
+  SpawnLane2: {fileID: 0}
+  SpawnLane3: {fileID: 0}
+  laneID: 0
+--- !u!114 &114852966004124564
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1209354815524732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab6729670b4936f4ab2c88868ccf06d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 90
+  currentHealth: 0
 --- !u!114 &114921854958536086
 MonoBehaviour:
   m_ObjectHideFlags: 1

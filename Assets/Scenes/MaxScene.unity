@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 152502883}
   - component: {fileID: 152502882}
   m_Layer: 0
-  m_Name: Main Camera (1)
+  m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -216,7 +216,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &244713440
 GameObject:
@@ -374,7 +374,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 56c4d1cffa2467849a96a9dda0a118d7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: be2c7b51f914f8840b79f9ed6350a6ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -392,8 +392,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 276899317}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 5, z: 1}
+  m_LocalPosition: {x: 10, y: 0.8, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 1863610050}
   m_Father: {fileID: 0}
@@ -408,7 +408,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4711888845105138, guid: 029bdfae36eeed644b173a20c2c2fbf0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 6.028287
+      value: 6.02
       objectReference: {fileID: 0}
     - target: {fileID: 4711888845105138, guid: 029bdfae36eeed644b173a20c2c2fbf0, type: 2}
       propertyPath: m_LocalPosition.y
@@ -436,7 +436,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4711888845105138, guid: 029bdfae36eeed644b173a20c2c2fbf0, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1209354815524732, guid: 029bdfae36eeed644b173a20c2c2fbf0, type: 2}
       propertyPath: m_Name
@@ -450,6 +450,21 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114271283998923142, guid: 029bdfae36eeed644b173a20c2c2fbf0,
+        type: 2}
+      propertyPath: SpawnLane1
+      value: 
+      objectReference: {fileID: 743001027}
+    - target: {fileID: 114271283998923142, guid: 029bdfae36eeed644b173a20c2c2fbf0,
+        type: 2}
+      propertyPath: SpawnLane2
+      value: 
+      objectReference: {fileID: 1566033007}
+    - target: {fileID: 114271283998923142, guid: 029bdfae36eeed644b173a20c2c2fbf0,
+        type: 2}
+      propertyPath: SpawnLane3
+      value: 
+      objectReference: {fileID: 2108910967}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 029bdfae36eeed644b173a20c2c2fbf0, type: 2}
   m_IsPrefabAsset: 0
@@ -487,81 +502,32 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &704727963
+--- !u!1 &743001026
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 704727966}
-  - component: {fileID: 704727965}
-  - component: {fileID: 704727964}
+  - component: {fileID: 743001027}
   m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
+  m_Name: TurtleSpawnLane1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &704727964
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 704727963}
-  m_Enabled: 1
---- !u!20 &704727965
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 704727963}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 1
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &704727966
+--- !u!4 &743001027
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 704727963}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_GameObject: {fileID: 743001026}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.37, y: 7.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1853172005}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &763933762
@@ -779,7 +745,6 @@ MonoBehaviour:
   offset: 0
   projectile: {fileID: 1109359350446872, guid: 849ecd4d6273a6b42a84e7e278d70794, type: 2}
   shotPoint: {fileID: 118476205}
-  startTimeBtwShots: 0.5
 --- !u!212 &966288301
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -967,7 +932,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4711888845105138, guid: 029bdfae36eeed644b173a20c2c2fbf0, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1209354815524732, guid: 029bdfae36eeed644b173a20c2c2fbf0, type: 2}
       propertyPath: m_Name
@@ -981,6 +946,21 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114271283998923142, guid: 029bdfae36eeed644b173a20c2c2fbf0,
+        type: 2}
+      propertyPath: SpawnLane1
+      value: 
+      objectReference: {fileID: 743001027}
+    - target: {fileID: 114271283998923142, guid: 029bdfae36eeed644b173a20c2c2fbf0,
+        type: 2}
+      propertyPath: SpawnLane2
+      value: 
+      objectReference: {fileID: 1566033007}
+    - target: {fileID: 114271283998923142, guid: 029bdfae36eeed644b173a20c2c2fbf0,
+        type: 2}
+      propertyPath: SpawnLane3
+      value: 
+      objectReference: {fileID: 2108910967}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 029bdfae36eeed644b173a20c2c2fbf0, type: 2}
   m_IsPrefabAsset: 0
@@ -1044,7 +1024,55 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1470407002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1470407004}
+  - component: {fileID: 1470407003}
+  m_Layer: 0
+  m_Name: EnemyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1470407003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1470407002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f9ff4311b9fb5447a42760c35f67b97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turtleCount: 3
+  currentTurtles: 0
+  spawnLane1: 0
+  spawnLane2: 0
+  spawnLane3: 0
+  hoveringTurtle: {fileID: 1209354815524732, guid: 029bdfae36eeed644b173a20c2c2fbf0,
+    type: 2}
+--- !u!4 &1470407004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1470407002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1853172005}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1517800886
 GameObject:
@@ -1115,6 +1143,34 @@ RectTransform:
   m_AnchoredPosition: {x: -51, y: 0}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1566033006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1566033007}
+  m_Layer: 0
+  m_Name: TurtleSpawnLane2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1566033007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1566033006}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.02, y: -7.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1853172005}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1575708707
 GameObject:
   m_ObjectHideFlags: 0
@@ -1146,7 +1202,7 @@ RectTransform:
   m_Children:
   - {fileID: 1000217229}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1290,6 +1346,37 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1785228646}
   m_CullTransparentMesh: 0
+--- !u!1 &1853172004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1853172005}
+  m_Layer: 0
+  m_Name: TurtleLanes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1853172005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1853172004}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 743001027}
+  - {fileID: 1566033007}
+  - {fileID: 2108910967}
+  m_Father: {fileID: 1470407004}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1863610049
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,8 +1401,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1863610049}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.31, y: -0.168, z: 0}
-  m_LocalScale: {x: 2.5, y: 1, z: 1}
+  m_LocalPosition: {x: -5.76, y: -3.77, z: 0}
+  m_LocalScale: {x: 2, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 276899320}
   m_RootOrder: 0
@@ -1518,7 +1605,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1922651247
 GameObject:
@@ -1669,7 +1756,7 @@ Transform:
   m_LocalScale: {x: 23.864416, y: 10.619307, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2017702939
 Prefab:
@@ -1708,13 +1795,51 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4711888845105138, guid: 029bdfae36eeed644b173a20c2c2fbf0, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 114921854958536086, guid: 029bdfae36eeed644b173a20c2c2fbf0,
+    - target: {fileID: 114271283998923142, guid: 029bdfae36eeed644b173a20c2c2fbf0,
         type: 2}
-      propertyPath: player
+      propertyPath: SpawnLane1
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 743001027}
+    - target: {fileID: 114271283998923142, guid: 029bdfae36eeed644b173a20c2c2fbf0,
+        type: 2}
+      propertyPath: SpawnLane2
+      value: 
+      objectReference: {fileID: 1566033007}
+    - target: {fileID: 114271283998923142, guid: 029bdfae36eeed644b173a20c2c2fbf0,
+        type: 2}
+      propertyPath: SpawnLane3
+      value: 
+      objectReference: {fileID: 2108910967}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 029bdfae36eeed644b173a20c2c2fbf0, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &2108910966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2108910967}
+  m_Layer: 0
+  m_Name: TurtleSpawnLane3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2108910967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2108910966}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 8, y: 7.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1853172005}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
