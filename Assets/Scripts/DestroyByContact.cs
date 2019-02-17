@@ -6,7 +6,7 @@ public class DestroyByContact : MonoBehaviour {
 
     PlaceHolder_Health playerHealth;
 
-    public int turtleDamage;
+    public int damage;
 
     void Awake()
     {
@@ -20,7 +20,7 @@ public class DestroyByContact : MonoBehaviour {
             print("Enemy Damaged the Player");
             Destroy(gameObject);
 
-            playerHealth.TakeDamage(turtleDamage);
+            playerHealth.TakeDamage(damage);
             
         }
 
