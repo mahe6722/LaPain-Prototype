@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExtArm : MonoBehaviour
+public class ExtendableArm : MonoBehaviour
 {
     public float armReach;//5
     public float speed;
