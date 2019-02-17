@@ -22,13 +22,14 @@ public class PlaceHolder_EnemyHealth : MonoBehaviour {
 
 		if (currentHealth <= 0) {
             Death();
+            managerEnemy.currentTurtles--;
         }
 
     }
 
     void Death()
     {
-        managerEnemy.currentTurtles -= 1;
+        
 
         //Tell the game the the lane this Turtle occupied now is free!
         if (turtleMovement.laneID == 1) {

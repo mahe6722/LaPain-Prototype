@@ -21,7 +21,7 @@ public class Pausee : MonoBehaviour
         }
 
 
-        if (Input.GetKey(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             if (Pause == true)
             {
