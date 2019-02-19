@@ -1988,7 +1988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d891cd3245c758847bd646c9b5bbaeca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
+  speed: 0.2
 --- !u!23 &1936242140
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2004,7 +2004,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 2b3a3b2275e3e4148810632ff174a476, type: 2}
+  - {fileID: 2100000, guid: 686c355bf348954468ab8f8d8171b81c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
