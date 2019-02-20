@@ -10,7 +10,12 @@ public class Gun : MonoBehaviour
     public Transform shotPoint;
 
     private float timeBtwShots;
-    public static float startTimeBtwShots = 0.7f;
+    public static float startTimeBtwShots;
+
+    private void Start()
+    {
+        startTimeBtwShots = 0.7f;
+    }
 
 
 

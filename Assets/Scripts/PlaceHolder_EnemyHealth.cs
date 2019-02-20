@@ -31,7 +31,7 @@ public class PlaceHolder_EnemyHealth : MonoBehaviour {
     {
         
 
-        //Tell the game the the lane this Turtle occupied now is free!
+        //Tell the game that the lane this Turtle occupied now is free!
         if (turtleMovement.laneID == 1) {
             managerEnemy.spawnLane1 = false;
         } else if (turtleMovement.laneID == 2) {
