@@ -6,20 +6,29 @@ public class ManagerEnemy : MonoBehaviour {
 
     public int turtleCount;
     public int currentTurtles;
+    public int hamsterCount;
+    public int currentHamsters;
 
     public bool spawnLane1 = false;
     public bool spawnLane2 = false;
     public bool spawnLane3 = false;
 
+    public bool hamsterLane1 = false;
+
     public GameObject hoveringTurtle;
     TurtleMovement turtleMovement;
+
+    GameObject hamsterSpawnLane;
+    public GameObject hamsterEnemy;
   
 
 
     // Use this for initialization
     void Start () {
         currentTurtles = turtleCount;
+        currentHamsters = hamsterCount;
         turtleMovement = GameObject.Find("Hovering Turtle").GetComponent<TurtleMovement>();
+        hamsterSpawnLane = GameObject.Find("HamsterLane");
 	}
 	
 	// Update is called once per frame
@@ -38,6 +47,12 @@ public class ManagerEnemy : MonoBehaviour {
             print("Spawning in Lane 3");
             Instantiate(hoveringTurtle, turtleMovement.SpawnLane3.transform.position, turtleMovement.SpawnLane1.transform.rotation);
             currentTurtles++;
+        }
+
+        if (currentHamsters < 1) 
+        {
+            Instantiate(hamsterEnemy, hamsterSpawnLane.transform.position, hamsterSpawnLane.transform.rotation);
+            currentHamsters++;
         }
 		
 	}

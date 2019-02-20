@@ -8,7 +8,7 @@ public class TurtleMovement : MonoBehaviour {
 
     float direction = 1; //Start Moving the Turtle Up
     int topBorder = 4;
-    int botBorder = -4;
+    int botBorder = -3;
     float unitID;
     public float frequency;
 
