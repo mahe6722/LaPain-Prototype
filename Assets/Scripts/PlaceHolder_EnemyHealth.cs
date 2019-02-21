@@ -30,7 +30,6 @@ public class PlaceHolder_EnemyHealth : MonoBehaviour {
     void Death()
     {
         
-
         //Tell the game that the lane this Turtle occupied now is free!
         if (turtleMovement.laneID == 1) {
             managerEnemy.spawnLane1 = false;

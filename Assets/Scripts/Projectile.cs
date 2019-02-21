@@ -13,6 +13,7 @@ public class Projectile : MonoBehaviour
 
     SnekoMovement snekoMovement;
     PlaceHolder_EnemyHealth enemyHealth;
+    HamsterHealth hamsterHealth;
 
 
     private void Start()
@@ -30,14 +31,18 @@ public class Projectile : MonoBehaviour
             if (hitInfo.collider.CompareTag("Enemy")) {
                 Debug.Log("Enemy must take damage!");
                 enemyHealth = hitInfo.collider.gameObject.GetComponent<PlaceHolder_EnemyHealth>();
-
+                
                 enemyHealth.currentHealth -= playerDamage;
 
                 //Reduce currentBorder in SnekoMovement Script by 1. Not using "--" because this value might need to be changed to a smaller value for each shot.
                 snekoMovement.currentBorder = snekoMovement.currentBorder - 1;
                 
             }
-           DestroyProjectile();
+            if (hitInfo.collider.CompareTag("Hamster")) {
+                hamsterHealth = hitInfo.collider.gameObject.GetComponent<HamsterHealth>();
+                hamsterHealth.currentHealth -= playerDamage;
+            }
+                DestroyProjectile();
         }
 
         transform.Translate(Vector2.right * speed * Time.deltaTime);

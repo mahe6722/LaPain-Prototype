@@ -18,6 +18,6 @@ public class MoveHamsterBullet : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         
-        transform.Translate(targetLocation * bulletSpeed * Time.deltaTime);
+        transform.Translate(targetLocation * bulletSpeed * Time.deltaTime, Space.World);
 	}
 }
