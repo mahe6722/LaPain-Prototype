@@ -593,6 +593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   currentHealth: 0
+  actualHealth: 0
   healthSlider: {fileID: 1292129573}
   enrageImage: {fileID: 682122083}
   enrageState2: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
@@ -1004,7 +1005,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9fd299bbbc83d794cac001fdaf404c30, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a9814512af479544d9aee0184e854f15, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.512
   m_Pitch: 1

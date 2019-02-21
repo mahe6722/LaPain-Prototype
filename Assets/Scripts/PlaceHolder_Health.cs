@@ -7,6 +7,7 @@ public class PlaceHolder_Health : MonoBehaviour {
 
     public int startingHealth = 100;
     public int currentHealth;
+    public int actualHealth;
 
     public Slider healthSlider;
     public Image enrageImage;
@@ -20,6 +21,7 @@ public class PlaceHolder_Health : MonoBehaviour {
 	
 	void Awake () {
         currentHealth = startingHealth;
+        actualHealth = startingHealth + 50;
 	}
 	
 	// Update is called once per frame
@@ -45,12 +47,22 @@ public class PlaceHolder_Health : MonoBehaviour {
     {
         takesDamage = true;
 
+        if (currentHealth > 25) {
         currentHealth -= amount;
+        }
 
+        actualHealth -= amount;
+        
+        if (actualHealth > 25) {
         healthSlider.value = currentHealth;
+        }
+        else {
+            healthSlider.value = actualHealth;
+        }
 
-        if(currentHealth <= 0 && !isDead) 
+        if(actualHealth <= 0 && !isDead) 
         {
+            currentHealth = 0;
             //Call the Function that takes care of the Death of the Player
             Death();
         }
@@ -60,6 +72,7 @@ public class PlaceHolder_Health : MonoBehaviour {
     void Death ()
     {
         isDead = true;
+        
         Destroy(gameObject);
     }
 }
