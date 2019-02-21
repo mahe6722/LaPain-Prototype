@@ -12,8 +12,8 @@ public class SnekoMovement : MonoBehaviour {
 
     public bool retreating = false;
     //This value counts how many times the carrot almost got caught by Spitfire. Use this value to change the behavior of Sneko after 3 "Close Calls". Boss fight will now begin when all enemies are cleared! 
-    public int stageCounter;
-   
+    public int stageCounter = 1;
+    public int numberOfStages = 4;
 
     //Maximum travel distance towards middle of the screen
     public int leftBorder = 2;

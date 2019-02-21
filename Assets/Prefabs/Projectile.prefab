@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4070872f5f928f469c9f2051424fcc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turtleDamage: 0
+  damage: 0
 --- !u!114 &114772070267041242
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c3a5f219e97417468410787c498796f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 30
   lifeTime: 5
   distance: 0.5
   whatIsSolid:

@@ -26,7 +26,7 @@ public class DestroyByContact : MonoBehaviour {
 
         //Make sure that if the bullet collides with any other collider it should also destroy. 
         // However we remove destruction IF impact on Enemy or Carrot occurs. This is a safety-net for the FriendlyFire system.
-        else if(other.tag != "Enemy" && other.tag != "Carrot") {
+        else if(other.tag != "Enemy" && other.tag != "Carrot" && other.tag != "NotCarrot") {
         Destroy(gameObject);
         }
     }
