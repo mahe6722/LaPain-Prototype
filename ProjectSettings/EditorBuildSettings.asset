@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LudwigScene.unity
     guid: 605b2338862026f4c90d34b0ef5763c2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MaxScene.unity
     guid: 2fc58598e11dcbd4392c3bb440c14165
   m_configObjects: {}
