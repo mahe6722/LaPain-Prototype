@@ -14,6 +14,10 @@ public class PlaceHolder_Health : MonoBehaviour {
     public Sprite enrageState2;
     public Sprite enrageState3;
 
+    public Image damageImage;
+    public float flashSpeed = 5f;
+    public Color flashColor = new Color(1f, 0f, 0f, 1f);
+
     bool isDead;
     bool takesDamage;
 
@@ -27,8 +31,15 @@ public class PlaceHolder_Health : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        takesDamage = false;
-
+        if (takesDamage) 
+        {
+            damageImage.color = flashColor;
+        }
+        else 
+        {
+            damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+        }
+        
         //Switching Between Enrage Sprites based on current health.
         if (currentHealth <= 75 && currentHealth > 25) {
             enrageImage.sprite = enrageState2;
@@ -39,8 +50,9 @@ public class PlaceHolder_Health : MonoBehaviour {
             enrageImage.sprite = enrageState3;
             Gun.startTimeBtwShots = 0.2f;
         }
-        
-	}
+
+        takesDamage = false;
+    }
 
     //Access this Script from DestroyByContact on the Laser_Projectiles. This will pass the damage value of the Turtle to "TakeDamage"
     public void TakeDamage (int amount)
