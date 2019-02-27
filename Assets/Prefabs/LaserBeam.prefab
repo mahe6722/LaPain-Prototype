@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 61200698046255634}
   - component: {fileID: 50575975113685506}
   - component: {fileID: 82773151225832748}
+  - component: {fileID: 114372342952307032}
   m_Layer: 0
   m_Name: Laser_Projectile
   m_TagString: laserBeam
@@ -238,6 +239,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 25
+--- !u!114 &114372342952307032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1828650314641322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d009abc5921e54a46bc29da805ef2346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114710549336186338
 MonoBehaviour:
   m_ObjectHideFlags: 1
