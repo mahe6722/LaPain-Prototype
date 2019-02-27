@@ -20,6 +20,9 @@ public class ManagerEnemy : MonoBehaviour {
 
     GameObject hamsterSpawnLane;
     public GameObject hamsterEnemy;
+
+    private float timerHamsterSpawn;
+    public float respawnTimeHamster = 1;
   
 
 
@@ -51,8 +54,13 @@ public class ManagerEnemy : MonoBehaviour {
 
         if (currentHamsters < 1) 
         {
+            timerHamsterSpawn += Time.deltaTime;
+
+            if(timerHamsterSpawn > respawnTimeHamster) {
             Instantiate(hamsterEnemy, hamsterSpawnLane.transform.position, hamsterSpawnLane.transform.rotation);
             currentHamsters++;
+            timerHamsterSpawn = 0;
+            }
         }
 		
 	}
