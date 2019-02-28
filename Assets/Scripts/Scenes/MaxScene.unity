@@ -2283,6 +2283,11 @@ Prefab:
       propertyPath: SpawnLane3
       value: 
       objectReference: {fileID: 885533813}
+    - target: {fileID: 82242396899139922, guid: 029bdfae36eeed644b173a20c2c2fbf0,
+        type: 2}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 029bdfae36eeed644b173a20c2c2fbf0, type: 2}
   m_IsPrefabAsset: 0

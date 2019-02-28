@@ -6,9 +6,12 @@ public class PlaceHolder_EnemyHealth : MonoBehaviour {
 
     public int startingHealth;
     public int currentHealth;
+    bool dyingSoundPlayed;
 
     ManagerEnemy managerEnemy;
     TurtleMovement turtleMovement;
+    TurtleShooting turtleShooting;
+    PolygonCollider2D turtleCollider;
     SpriteRenderer turtleSprite;
     AudioSource deathSound;
     Color startColor;
@@ -20,6 +23,8 @@ public class PlaceHolder_EnemyHealth : MonoBehaviour {
         currentHealth = startingHealth;
         managerEnemy = GameObject.Find("EnemyManager").GetComponent<ManagerEnemy>();
         turtleMovement = GetComponent<TurtleMovement>();
+        turtleShooting = GetComponentInChildren<TurtleShooting>();
+        turtleCollider = GetComponent<PolygonCollider2D>();
         deathSound = GetComponent<AudioSource>();
 
         turtleSprite = GetComponent<SpriteRenderer>();
@@ -31,9 +36,20 @@ public class PlaceHolder_EnemyHealth : MonoBehaviour {
 	void Update () {
 
 		if (currentHealth <= 0) {
+
+            if (!deathSound.isPlaying && dyingSoundPlayed == false) {
             deathSound.Play();
-            Death();
-            managerEnemy.currentTurtles--;
+            dyingSoundPlayed = true;
+            turtleSprite.enabled = false;
+            turtleShooting.enabled = false;
+            turtleCollider.enabled = false;
+
+            }
+            else if(!deathSound.isPlaying && dyingSoundPlayed == true) {
+                Death();
+                managerEnemy.currentTurtles--;
+            }
+            
         }
 
         //Player Projectiles will on collision make the enemies Red. If they are red, next frame they will lerp towards their original color!
