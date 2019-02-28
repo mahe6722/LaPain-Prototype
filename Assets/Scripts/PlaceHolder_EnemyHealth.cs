@@ -10,14 +10,17 @@ public class PlaceHolder_EnemyHealth : MonoBehaviour {
     ManagerEnemy managerEnemy;
     TurtleMovement turtleMovement;
     SpriteRenderer turtleSprite;
+    AudioSource deathSound;
     Color startColor;
     private float flashSpeed = 5f;
+    
 
 	// Use this for initialization
 	void Awake () {
         currentHealth = startingHealth;
         managerEnemy = GameObject.Find("EnemyManager").GetComponent<ManagerEnemy>();
         turtleMovement = GetComponent<TurtleMovement>();
+        deathSound = GetComponent<AudioSource>();
 
         turtleSprite = GetComponent<SpriteRenderer>();
         startColor = turtleSprite.color;
@@ -28,6 +31,7 @@ public class PlaceHolder_EnemyHealth : MonoBehaviour {
 	void Update () {
 
 		if (currentHealth <= 0) {
+            deathSound.Play();
             Death();
             managerEnemy.currentTurtles--;
         }
@@ -53,7 +57,5 @@ public class PlaceHolder_EnemyHealth : MonoBehaviour {
         }
 
         Destroy(gameObject);
-        AudioSource sound = gameObject.GetComponent<AudioSource>();
-        sound.Play();
     }
 }
