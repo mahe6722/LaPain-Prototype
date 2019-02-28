@@ -9,12 +9,19 @@ public class PlaceHolder_EnemyHealth : MonoBehaviour {
 
     ManagerEnemy managerEnemy;
     TurtleMovement turtleMovement;
+    SpriteRenderer turtleSprite;
+    Color startColor;
+    private float flashSpeed = 5f;
 
 	// Use this for initialization
 	void Awake () {
         currentHealth = startingHealth;
         managerEnemy = GameObject.Find("EnemyManager").GetComponent<ManagerEnemy>();
         turtleMovement = GetComponent<TurtleMovement>();
+
+        turtleSprite = GetComponent<SpriteRenderer>();
+        startColor = turtleSprite.color;
+
     }
 	
 	// Update is called once per frame
@@ -25,6 +32,12 @@ public class PlaceHolder_EnemyHealth : MonoBehaviour {
             managerEnemy.currentTurtles--;
         }
 
+        //Player Projectiles will on collision make the enemies Red. If they are red, next frame they will lerp towards their original color!
+        if (turtleSprite.color != startColor) 
+        {
+            turtleSprite.color = Color.Lerp(turtleSprite.color, startColor, flashSpeed * Time.deltaTime);
+        }
+            
     }
 
     void Death()

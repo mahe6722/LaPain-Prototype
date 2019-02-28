@@ -15,6 +15,13 @@ public class Projectile : MonoBehaviour
     PlaceHolder_EnemyHealth enemyHealth;
     HamsterHealth hamsterHealth;
 
+    SpriteRenderer TurtleSprite;
+    Color startColorTurtle;
+    private float flashSpeed = 5f;
+
+    SpriteRenderer HamsterSprite;
+    Color startColorHamster;
+    
 
     private void Start()
     {
@@ -31,7 +38,15 @@ public class Projectile : MonoBehaviour
             if (hitInfo.collider.CompareTag("Enemy")) {
                 Debug.Log("Enemy must take damage!");
                 enemyHealth = hitInfo.collider.gameObject.GetComponent<PlaceHolder_EnemyHealth>();
-                
+
+                //Accessing the Sprite of the Enemy to make it flash red when taking damage
+                TurtleSprite = hitInfo.collider.gameObject.GetComponent<SpriteRenderer>();
+                startColorTurtle = TurtleSprite.color;
+
+                if (TurtleSprite.color == startColorTurtle) {
+                TurtleSprite.color = new Color(1f, 0f, 0f, 1);
+                }
+                              
                 enemyHealth.currentHealth -= playerDamage;
 
                 //Reduce currentBorder in SnekoMovement Script by 1. Not using "--" because this value might need to be changed to a smaller value for each shot.
@@ -40,6 +55,14 @@ public class Projectile : MonoBehaviour
             }
             if (hitInfo.collider.CompareTag("Hamster")) {
                 hamsterHealth = hitInfo.collider.gameObject.GetComponent<HamsterHealth>();
+
+                HamsterSprite = hitInfo.collider.gameObject.GetComponent<SpriteRenderer>();
+                startColorHamster = HamsterSprite.color;
+
+                if (HamsterSprite.color == startColorHamster) {
+                    HamsterSprite.color = new Color(1f, 0f, 0f, 1);
+                }
+
                 hamsterHealth.currentHealth -= playerDamage;
             }
                 DestroyProjectile();

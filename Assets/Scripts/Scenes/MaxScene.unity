@@ -1970,7 +1970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armReach: -2
-  speed: 5
+  speed: 10
 --- !u!212 &1779938796
 SpriteRenderer:
   m_ObjectHideFlags: 0
