@@ -22,8 +22,7 @@ public class PlaceHolder_Health : MonoBehaviour {
     bool takesDamage;
 
 
-	
-	void Awake () {
+    void Awake () {
         currentHealth = startingHealth;
         actualHealth = startingHealth + 50;
 	}
@@ -58,6 +57,9 @@ public class PlaceHolder_Health : MonoBehaviour {
     public void TakeDamage (int amount)
     {
         takesDamage = true;
+
+        AudioSource sound = gameObject.GetComponent<AudioSource>();
+        sound.Play();
 
         if (currentHealth > 25) {
         currentHealth -= amount;

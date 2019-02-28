@@ -52,7 +52,8 @@ public class PlaceHolder_EnemyHealth : MonoBehaviour {
             managerEnemy.spawnLane3 = false;
         }
 
-        Destroy(gameObject);      
-
+        Destroy(gameObject);
+        AudioSource sound = gameObject.GetComponent<AudioSource>();
+        sound.Play();
     }
 }
