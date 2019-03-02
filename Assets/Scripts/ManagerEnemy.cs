@@ -9,6 +9,8 @@ public class ManagerEnemy : MonoBehaviour {
     public int hamsterCount;
     public int currentHamsters;
 
+    public bool bossFight = false;
+
     public bool spawnLane1 = false;
     public bool spawnLane2 = false;
     public bool spawnLane3 = false;
@@ -36,6 +38,30 @@ public class ManagerEnemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void LateUpdate () {
+
+        if (!bossFight) {
+
+            SpawnTurtles();
+
+            SpawnHamsters();
+        }
+    }
+
+    private void SpawnHamsters()
+    {
+        if (currentHamsters < 1) {
+            timerHamsterSpawn += Time.deltaTime;
+
+            if (timerHamsterSpawn > respawnTimeHamster) {
+                Instantiate(hamsterEnemy, hamsterSpawnLane.transform.position, hamsterSpawnLane.transform.rotation);
+                currentHamsters++;
+                timerHamsterSpawn = 0;
+            }
+        }
+    }
+
+    private void SpawnTurtles()
+    {
         if (currentTurtles < 3 && spawnLane1 == false) {
             print("Spawning in Lane 1");
             Instantiate(hoveringTurtle, turtleMovement.SpawnLane1.transform.position, turtleMovement.SpawnLane1.transform.rotation);
@@ -51,17 +77,5 @@ public class ManagerEnemy : MonoBehaviour {
             Instantiate(hoveringTurtle, turtleMovement.SpawnLane3.transform.position, turtleMovement.SpawnLane1.transform.rotation);
             currentTurtles++;
         }
-
-        if (currentHamsters < 1) 
-        {
-            timerHamsterSpawn += Time.deltaTime;
-
-            if(timerHamsterSpawn > respawnTimeHamster) {
-            Instantiate(hamsterEnemy, hamsterSpawnLane.transform.position, hamsterSpawnLane.transform.rotation);
-            currentHamsters++;
-            timerHamsterSpawn = 0;
-            }
-        }
-		
-	}
+    }
 }
