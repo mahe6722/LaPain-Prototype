@@ -2,11 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SnekoMovement : MonoBehaviour
-{
-    GameObject sneko;
-
-    ManagerEnemy enemyManager;
+public class SnekoMovement : MonoBehaviour {
 
     public float snekoSpeed;
     public float retreatSpeed;
@@ -28,21 +24,13 @@ public class SnekoMovement : MonoBehaviour
     //Use this to Progress Boss movement towards player. Decrement as Enemies die!
     public int currentBorder;
 
-    public bool bossFightWaiting = false;
-    public bool bossFightComencing = false;
   
-    void Start ()
-    {
+    void Start () {
         currentSpeed = snekoSpeed;
-        sneko = GameObject.Find("Sneko");
-
-        enemyManager = GameObject.Find("EnemyManager").GetComponent<ManagerEnemy>();
-
-    }
+	}
 	
 	
-	void FixedUpdate ()
-    {
+	void FixedUpdate () {
 
         //if boss is going to start retreating we want fast speed and set retreating to true
         if (direction > 0) 
@@ -50,61 +38,27 @@ public class SnekoMovement : MonoBehaviour
             currentSpeed = retreatSpeed;
             retreating = true;
         }
-        else
-        {
+        else {
             currentSpeed = snekoSpeed;
         }
 
-        if (transform.position.x > leftBorder)
-        {       
+        if (transform.position.x > leftBorder) {
+        
             //reset direction and stop retreating when boss hits right border.
             if (transform.position.x > rightBorder) 
             {
-                if (stageCounter != numberOfStages)
-                {
-                    direction = -direction;
-                    retreating = false;
-                }
-                else
-                {
-                    currentSpeed = 0;
-                    retreating = false;
-                    sneko.transform.localRotation = Quaternion.Euler(0, 180, 0);
-                    bossFightWaiting = true;
-                }
-                
+                direction = -direction;
+                retreating = false;
             }
-
+            
             //Gradually Approaching leftBorder, currentBorder is changed as the player damages the enemies. (Done in Player Projectile script)
-            if (transform.position.x > currentBorder)
-            {
+            if (transform.position.x > currentBorder) {
+
             //Moving the Boss
             transform.Translate(direction * currentSpeed * Time.deltaTime, 0, 0);
             }
-        }
-
-        if (stageCounter == numberOfStages)
-        {
-            rightBorder = 20;
-        }
-
-        if (stageCounter == numberOfStages && enemyManager.currentHamsters == 0 && enemyManager.currentTurtles == 0)
-        {
-            bossFightWaiting = false;
-            bossFightComencing = true;
-            rightBorder = 10;
-        }
-
-        if (bossFightComencing)
-        {
-            if (transform.position.x > rightBorder)
-            {
-                transform.Translate(Vector2.right * retreatSpeed * Time.deltaTime);
-            }
-            else
-            {
-                retreatSpeed = 0;
-            }
+            
+            
         }
     }
 
