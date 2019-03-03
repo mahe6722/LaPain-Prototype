@@ -20,11 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4107344966683700}
   - component: {fileID: 212904689748938072}
-  - component: {fileID: 114772070267041242}
   - component: {fileID: 58179513721592138}
-  - component: {fileID: 114388900844569840}
+  - component: {fileID: 114098618301836462}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: SnekoSpit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +57,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.09
---- !u!114 &114388900844569840
+--- !u!114 &114098618301836462
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -66,28 +65,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1109359350446872}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4070872f5f928f469c9f2051424fcc8, type: 3}
+  m_Script: {fileID: 11500000, guid: f0096dd16e1b8ad45897cf285fc5a665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
---- !u!114 &114772070267041242
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1109359350446872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c3a5f219e97417468410787c498796f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 25
+  damage: 25
+  speed: 1
   lifeTime: 5
   distance: 0.5
-  whatIsSolid:
-    serializedVersion: 2
-    m_Bits: 256
-  playerDamage: 30
 --- !u!212 &212904689748938072
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -124,7 +108,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.9528302, g: 0.03146139, b: 0.03146139, a: 1}
+  m_Color: {r: 0.046303872, g: 0.9529412, b: 0.031372532, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

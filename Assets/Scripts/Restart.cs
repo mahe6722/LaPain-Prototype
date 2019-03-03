@@ -18,8 +18,8 @@ public class Restart : MonoBehaviour
             Application.Quit();
         }
 
-        if (playerHealth.currentHealth <= 0) {
-
+        if (playerHealth.currentHealth <= 0 && GameObject.Find("Player") == null)
+        {
             if (Input.GetKeyDown(KeyCode.R))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
