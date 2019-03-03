@@ -9,6 +9,8 @@ public class ManagerEnemy : MonoBehaviour {
     public int hamsterCount;
     public int currentHamsters;
 
+    public bool bossFight = false;
+
     public bool spawnLane1 = false;
     public bool spawnLane2 = false;
     public bool spawnLane3 = false;
@@ -20,6 +22,9 @@ public class ManagerEnemy : MonoBehaviour {
 
     GameObject hamsterSpawnLane;
     public GameObject hamsterEnemy;
+
+    private float timerHamsterSpawn;
+    public float respawnTimeHamster = 1;
   
     SnekoMovement snekoMovementScript;
 
@@ -68,4 +73,45 @@ public class ManagerEnemy : MonoBehaviour {
         }
 		
 	}
+	void LateUpdate () {
+
+        if (!bossFight) {
+
+            SpawnTurtles();
+
+            SpawnHamsters();
+        }
+    }
+
+    private void SpawnHamsters()
+    {
+        if (currentHamsters < 1) {
+            timerHamsterSpawn += Time.deltaTime;
+
+            if (timerHamsterSpawn > respawnTimeHamster) {
+                Instantiate(hamsterEnemy, hamsterSpawnLane.transform.position, hamsterSpawnLane.transform.rotation);
+                currentHamsters++;
+                timerHamsterSpawn = 0;
+            }
+        }
+    }
+
+    private void SpawnTurtles()
+    {
+        if (currentTurtles < 3 && spawnLane1 == false) {
+            print("Spawning in Lane 1");
+            Instantiate(hoveringTurtle, turtleMovement.SpawnLane1.transform.position, turtleMovement.SpawnLane1.transform.rotation);
+            currentTurtles++;
+        }
+        if (currentTurtles < 3 && spawnLane2 == false) {
+            print("Spawning in Lane 2");
+            Instantiate(hoveringTurtle, turtleMovement.SpawnLane2.transform.position, turtleMovement.SpawnLane1.transform.rotation);
+            currentTurtles++;
+        }
+        if (currentTurtles < 3 && spawnLane3 == false) {
+            print("Spawning in Lane 3");
+            Instantiate(hoveringTurtle, turtleMovement.SpawnLane3.transform.position, turtleMovement.SpawnLane1.transform.rotation);
+            currentTurtles++;
+        }
+    }
 }
