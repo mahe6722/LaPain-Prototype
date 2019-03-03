@@ -10,7 +10,6 @@ public class ExtendableArm : MonoBehaviour
     GameObject invisibleCollider;
 
     SnekoMovement snekoMovementScript;
-    
 
     GameObject player;
 
