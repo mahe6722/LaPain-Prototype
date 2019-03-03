@@ -11,6 +11,8 @@ public class ExtendableArm : MonoBehaviour
 
     SnekoMovement snekoMovementScript;
 
+    GameObject carrot;
+
     GameObject player;
 
     private int borderReset;
@@ -35,6 +37,8 @@ public class ExtendableArm : MonoBehaviour
         invisibleCollider = GameObject.Find("InvisibleShield");
 
         origSnekoLocation = GameObject.Find("Sneko").GetComponent<Transform>().position;
+
+        carrot = GameObject.Find("CarrotPlaceholder");
     }
 
     void Update()
@@ -50,7 +54,7 @@ public class ExtendableArm : MonoBehaviour
                     snekoMovementScript.direction = 1;
                     snekoMovementScript.currentBorder = borderReset;
 
-                    if (snekoMovementScript.stageCounter < 5)
+                    if (snekoMovementScript.stageCounter < snekoMovementScript.numberOfStages)
                     {
                         snekoMovementScript.stageCounter++;
                     }                  
@@ -58,17 +62,21 @@ public class ExtendableArm : MonoBehaviour
                     invisibleCollider.transform.position = invisibleCollider.transform.position + new Vector3(0.5f, 0, 0);
                     invisibleCollider.SetActive(false);
                 }
-                if (hitInfo.collider.CompareTag("Carrot"))
+                if (hitInfo.collider.CompareTag("Carrot") && carrot != null)
                 {
-                    //Accessing the movement script for Sneko. This tells Sneko to retreat because the arm would reach his carrot.
-
-                    //Counting how many times Spitfire almost caught the carrot with "stageCounter". After 3 "Close Calls" Sneko will change his behavior. Boss fight is not imminent. 
+                    carrot.transform.parent = null;
+                    carrot.transform.parent = gameObject.transform;
 
                     snekoMovementScript.direction = 1;
                     snekoMovementScript.currentBorder = borderReset;
 
                     extending = false;
                     returning = true;
+
+                    if (snekoMovementScript.stageCounter < snekoMovementScript.numberOfStages)
+                    {
+                        snekoMovementScript.stageCounter++;
+                    }
                 }
             }
 
@@ -84,6 +92,8 @@ public class ExtendableArm : MonoBehaviour
             gameObject.transform.Translate(Vector2.left * speed * Time.deltaTime);
             if (Vector2.Distance(gameObject.transform.position, origArmLocation) < 0.3)
             {
+
+
                 returning = false;
                 isActive = false;
                 gameObject.transform.position = origArmLocation;
@@ -97,9 +107,14 @@ public class ExtendableArm : MonoBehaviour
                     gameObject.SetActive(false);
                 }
             }
+            if (!returning && carrot != null && Vector2.Distance(carrot.transform.position, origArmLocation) < 0.3)
+            {
+                carrot.transform.parent = null;
+                Destroy(carrot);
+            }
         }
 
-        if (snekoMovementScript.stageCounter > 1 && Vector2.Distance(origSnekoLocation, GameObject.Find("Sneko").transform.position) < 0.1f && snekoMovementScript.stageCounter < 4)
+        if (snekoMovementScript.stageCounter > 1 && Vector2.Distance(origSnekoLocation, GameObject.Find("Sneko").transform.position) < 0.1f && snekoMovementScript.stageCounter < snekoMovementScript.numberOfStages-1)
         {
             invisibleCollider.SetActive(true);
         }
